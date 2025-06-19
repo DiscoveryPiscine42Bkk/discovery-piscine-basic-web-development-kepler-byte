@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0a0f1c] text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .grid-bg {
+      background-color: #0a0f1c;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      transition: background-color 0.3s ease;
+    }
+
+    
+
+    #line1, #line2 span {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Navbar -->
+  <nav class="text-white px-4 sm:px-6 md:px-10 lg:px-20 xl:px-44 flex items-center justify-between border-b border-gray-700">
+    <a href="./main.html" class="px-2 sm:px-4 py-4 border-b-2 border-orange-300 font-mono text-sm sm:text-base whitespace-nowrap">Home</a>
+    <button id="mobileMenuBtn" class="sm:hidden p-2 text-white text-2xl">☰</button>
+    <div class="hidden sm:flex gap-4">
+      <a href="./portfolioNatthaphong.html" class="px-2 sm:px-4 py-4 font-mono text-sm sm:text-base whitespace-nowrap">_Natthaphong_Chanwat</a>
+      <a href="./portfolioNatthaphong.html" class="px-2 sm:px-4 py-4 font-mono text-sm sm:text-base whitespace-nowrap">_Jittratep_Pachamni</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="fixed inset-0 bg-[#0a0f1c] text-white z-50 p-6 grid-bg hidden">
+    <div class="flex justify-between items-center border-b border-white/10 pb-2">
+      <p class="text-xl font-mono text-blue-200">/home</p>
+      <button id="closeMenu" class="text-2xl">&times;</button>
+    </div>
+    <p class="mt-4 mb-2 text-sm text-white/60 font-mono"># navigate:</p>
+    <ul class="space-y-2 text-lg font-mono">
+      <li><a href="./main.html" class="block text-orange-300 hover:text-cyan-300">_home</a></li>
+      <li><a href="./portfolioNatthaphong.html" class="block hover:text-cyan-300">_Natthaphong_Chanwat</a></li>
+      <li><a href="./portfolioJittratep.html" class="block hover:text-cyan-300">_Jittratep_Pachamni</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-gradient-to-br from-teal-400/20 via-blue-500/30 to-purple-700/20 blur-3xl"></div>
+
+    <div class="relative z-10 text-left px-6 max-w-3xl">
+      <p class="text-gray-300 mb-2 font-['Sarabun']">ยินดีต้อนรับสู่พอร์ตของเรา</p>
+      <h1 id="line1" class="text-5xl font-bold text-white mb-2">Welcome to</h1>
+      <h2 id="line2" class="text-2xl text-blue-400 font-mono mb-6">&gt; Our Portfolio</h2>
+
+      <div class="font-mono text-xs sm:text-sm text-gray-300 space-y-1 sm:space-y-2">
+        <p class="font-['Sarabun']">// เพื่อกดเข้าไปยังโปรไฟล์แต่ละคน</p>
+        <p class="font-['Sarabun']">// โปรดกดลิงก์</p>
+        <p>
+          const <span class="text-cyan-400">Natthaphong_Chanwat</span> =
+          <a href="./portfolioNatthaphong.html" class="text-pink-400">"localhost:5050/Natthaphong-Chnwat"</a>
+        </p>
+        <p>
+          const <span class="text-cyan-400">Jittratep_Pachamni</span> =
+          <a href="./portfolioJittratep.html" class="text-pink-400">"localhost:5050/Jittratep-Pachamni"</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-right px-4 sm:px-6 md:px-10 lg:px-20 xl:px-44 py-3 sm:py-4 text-gray-400 border-t border-gray-700 text-xs sm:text-sm">
+    © 2025 42bangkok Portfolio
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    $(document).ready(function () {
+      // Typewriter animation
+      const text = $("#line2").text();
+      $("#line2").empty();
+      $("#line1").delay(300).animate({ opacity: 1 }, 800, function () {
+        let delay = 0;
+        for (let i = 0; i < text.length; i++) {
+          $('<span/>').text(text[i]).appendTo("#line2").delay(delay).animate({ opacity: 1 }, 50);
+          delay += 50;
+        }
+      });
+
+      // Mobile menu toggle
+      $("#mobileMenuBtn").on("click", function () {
+        $("#mobileMenu").fadeIn(200);
+      });
+
+      $("#closeMenu").on("click", function () {
+        $("#mobileMenu").fadeOut(200);
+      });
+    });
+  </script>
+
+</body>
+</html>

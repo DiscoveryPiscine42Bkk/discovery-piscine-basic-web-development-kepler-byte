@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0a0f1c] text-white scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Portfolio | Natthaphong Chanwat</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Apply Custom Fonts */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* The .font-mono class will now use Fira Code */
+    .font-mono {
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Grid Background */
+    .grid-bg {
+      background-color: #0a0f1c;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Fixed Layout & Scrollbar Styling */
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* Adjusted height calculation for original navbar/footer size */
+    .main-content, .sidebar {
+      height: calc(100vh - 120px); 
+      overflow-y: auto;
+    }
+    
+    /* Custom Scrollbar for Webkit browsers */
+    .main-content::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .main-content::-webkit-scrollbar-track, .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .main-content::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb {
+      background: #4a5568;
+      border-radius: 3px;
+    }
+    .main-content::-webkit-scrollbar-thumb:hover, .sidebar::-webkit-scrollbar-thumb:hover {
+      background: #718096;
+    }
+
+    /* Mobile Menu Fade Animation (Reverted from slide) */
+     #mobileMenu {
+      display: none; /* Keep original jQuery fade behavior */
+    }
+
+  </style>
+</head>
+<body class="h-screen flex flex-col">
+
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-[#0a0f1c] text-white px-4 sm:px-6 md:px-10 lg:px-20 xl:px-44 flex items-center justify-between border-b border-gray-700">
+    <a href="./main.html" class="px-2 sm:px-4 py-4 font-mono text-sm sm:text-base whitespace-nowrap">Home</a>
+    <button id="mobileMenuBtn" class="sm:hidden p-2 text-white text-2xl">☰</button>
+    <div class="hidden sm:flex gap-4">
+      <a href="./portfolioNatthaphong.html" class="px-2 sm:px-4 py-4 border-b-2 border-orange-300 font-mono text-sm sm:text-base whitespace-nowrap">_Natthaphong_Chanwat</a>
+      <a href="./portfolioJittratep.html" class="px-2 sm:px-4 py-4 font-mono text-sm sm:text-base whitespace-nowrap">_Jittratep_Pachamni</a>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="fixed inset-0 bg-[#0a0f1c] text-white z-50 p-6 grid-bg hidden">
+    <div class="flex justify-between items-center border-b border-white/10 pb-2">
+      <p class="text-xl font-mono text-blue-200">/home/Natthaphong_Chanwat</p>
+      <button id="closeMenu" class="text-2xl">&times;</button>
+    </div>
+    <p class="mt-4 mb-2 text-sm text-white/60 font-mono"># navigate:</p>
+    <ul class="space-y-2 text-lg font-mono">
+      <li><a href="./main.html" class="block hover:text-cyan-300">_home</a></li>
+      <li><a href="./portfolioNatthaphong.html" class="block text-orange-300 hover:text-cyan-300">_Natthaphong_Chanwat</a></li>
+      <li><a href="./portfolioJittratep.html" class="block hover:text-cyan-300">_Jittratep_Pachamni</a></li>
+    </ul>
+  </div>
+
+  <div class="flex flex-1 pt-16 pb-12">
+    
+    <aside class="hidden lg:block fixed left-0 top-16 w-64 bg-[#0f1419] border-r border-gray-700 p-6 sidebar">
+      <nav class="space-y-4">
+        <div class="mb-6">
+          <h3 class="text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Navigation</h3>
+          <ul class="space-y-1 font-medium">
+            <li>
+              <a href="#about-me" class="flex items-center gap-3 px-3 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-md font-mono text-sm transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                <span>About me</span>
+              </a>
+            </li>
+            <li>
+              <a href="#faculty" class="flex items-center gap-3 px-3 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-md font-mono text-sm transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3.5a1 1 0 00.028 1.838l7 3.5a1 1 0 00.732 0l7-3.5a1 1 0 00.028-1.838l-7-3.5zM3 9.73l7 3.5 7-3.5v3.98l-7 3.5-7-3.5V9.73z" /></svg>
+                <span>About Faculty</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="flex items-center gap-3 px-3 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-md font-mono text-sm transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.76a11.034 11.034 0 006.287 6.287l.76-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="flex-1 lg:ml-64 px-4 sm:px-6 md:px-10 lg:px-8 py-8 main-content grid-bg">
+      
+      <section id="about-me" class="relative mb-20">
+  <div class="bg-gradient-to-r from-[#1a202c] via-[#2d3748] to-[#1a202c] rounded-lg overflow-hidden relative flex flex-col sm:flex-row items-center shadow-2xl px-6 sm:px-12 py-8 sm:py-10">
+    
+    <!-- background radial light -->
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #4299e1 0%, transparent 40%), radial-gradient(circle at 80% 30%, #ed8936 0%, transparent 40%), radial-gradient(circle at 50% 80%, #9f7aea 0%, transparent 40%);"></div>
+    
+    <!-- main content -->
+    <div class="relative z-10 w-full flex flex-col sm:flex-row items-center gap-6">
+      
+      <!-- Profile Picture -->
+      <img 
+        src="https://media.discordapp.net/attachments/929957531382591591/1385094725177966685/jeff.jpg?ex=6854d17c&is=68537ffc&hm=74539acff1fa9a70f5f9d549221fbffd5cea43c7c13f5d9be60be63a25cc1039&=&format=webp&width=1228&height=1736"
+        alt="Profile Picture"
+        class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full border-4 border-gray-600 shadow-lg flex-shrink-0"
+      >
+      
+      <!-- Text Content -->
+      <div class="text-white text-center sm:text-left">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
+          Natthaphong Chanwat
+        </h1>
+        <div class="text-base sm:text-lg lg:text-xl text-white/80 font-mono space-y-2">
+          <p id="line1" class="typewriter-cursor">เกี่ยวกับฉัน</p>
+          <p id="line2">
+            สวัสดีครับ ผมชื่อณัฐพงค์ จันทร์วัตร ชื่อเล่นชื่อคิม อายุ 20 ปี จบการศึกษาจาก วิทยาลัยเทคนิคโพธาราม
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+      <section id="faculty" class="mb-16 scroll-mt-20">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-cyan-300">About Faculty</h2>
+        <p class="text-gray-400 font-mono text-sm mb-6">คณะครุศาสตร์อุตสาหกรรม</p>
+        <div class="w-24 h-1 bg-cyan-400/50 rounded-full mb-8"></div>
+        
+        <div class="bg-white/5 rounded-lg overflow-hidden mb-6 shadow-lg border border-white/10">
+          <img src="https://media.discordapp.net/attachments/1382205481749315677/1384737768969732147/ietech.png?ex=68542dcb&is=6852dc4b&hm=5d7d45e685c88d6b0fc17f22436482d2af85e6c8dba3ed71bc8fd64d65a7449c&=&format=webp&quality=lossless&width=2716&height=1528" alt="Faculty Building" class="w-full h-auto max-h-80 object-cover">
+        </div>
+        
+        <div class="text-gray-300 space-y-4 leading-relaxed">
+            <p>
+                หลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชาเทคโนโลยีอุตสาหกรรมศึกษา คณะครุศาสตร์อุตสาหกรรม
+                <span class="block text-sm text-gray-400 mt-1">Bachelor of Science in Industrial Education (Computer Technology)</span>
+            </p>
+            <p>
+                หลักสูตรนี้มุ่งเน้นการผลิตบุคลากรที่มีความรู้ทั้งทางด้านเทคโนโลยีสารสนเทศและเทคโนโลยีอุตสาหกรรม สามารถนำความรู้ความสามารถไปใช้ในการพัฒนาเทคโนโลยีและนวัตกรรมเพื่อการพัฒนาประเทศชาติ
+            </p>
+            <p>
+                โดยผู้สำเร็จการศึกษาจะมีความสามารถในการใช้เทคโนโลยีสารสนเทศ ยิ่งกว่านั้นสามารถพัฒนาเว็บไซต์ และออกแบบสิ่งของต่างๆ งานกราฟิกอื่นๆ ในระดับเขตพื้นที่ภาคตะวันออกเฉียงเหนือ และภาคกลาง
+            </p>
+        </div>
+      </section>
+
+      <section id="contact" class="pt-3 scroll-mt-20">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-orange-300">Contact</h2>
+        <p class="text-gray-400 font-mono text-sm mb-6">Get in touch</p>
+        <div class="w-24 h-1 bg-orange-400/50 rounded-full mb-8"></div>
+
+        <div class="space-y-4 text-gray-300">
+          <a href="tel:0966680754" class="flex items-center gap-4 group">
+            <i class="bi bi-telephone-fill"></i>
+            <span class="group-hover:text-white transition-colors">0966680754</span>
+          </a>
+          <a href="mailto:natthaphong.jw@gmail.com" class="flex items-center gap-4 group">
+            <i class="bi bi-envelope-at-fill"></i>
+            <span class="group-hover:text-white transition-colors">natthaphong.jw@gmail.com</span>
+          </a>
+          <a href="#" class="flex items-center gap-4 group">
+            <i class="bi bi-instagram"></i>
+            <span class="group-hover:text-white transition-colors">keplery.url</span>
+          </a>
+           <a href="#" class="flex items-center gap-4 group">
+            <i class="bi bi-facebook"></i>
+            <span class="group-hover:text-white transition-colors">Natthaphong_jw</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="fixed bottom-0 left-0 right-0 z-40 bg-[#0a0f1c] text-right px-4 sm:px-6 md:px-10 lg:px-20 xl:px-44 py-3 sm:py-4 text-gray-400 border-t border-gray-700 text-xs sm:text-sm">
+    © 2025 42bangkok Portfolio
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // --- Typewriter Animation ---
+      
+      
+
+      // --- Mobile menu toggle (Original fade logic) ---
+      $("#mobileMenuBtn").on("click", function () {
+        $("#mobileMenu").fadeIn(200);
+      });
+
+      $("#closeMenu, #mobileMenu a").on("click", function () {
+        $("#mobileMenu").fadeOut(200);
+      });
+      
+      // --- Smooth scrolling for sidebar links ---
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            // Adjust scroll position calculation for new navbar height
+            $('.main-content').animate({
+                scrollTop: target.offset().top + $('.main-content').scrollTop() - 80 
+            }, 500);
+        }
+    });
+
+    });
+  </script>
+
+</body>
+</html>
